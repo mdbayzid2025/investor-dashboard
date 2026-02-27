@@ -24,6 +24,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 import { Logo } from './Logo';
+import { Button } from './Button';
 
 export function AdminLayout() {
   const location = useLocation();
@@ -82,23 +83,14 @@ export function AdminLayout() {
         ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
         {/* Admin Header */}
-        <div className="p-6 border-b border-[#D4AF37]/20">
-          <div className="flex items-center justify-between mb-4">
+        <div className="p-6 border-b border-[#D4AF37]/20">          
             <Logo />
             <button
               onClick={() => setIsSidebarOpen(false)}
               className="lg:hidden text-gray-400 hover:text-white"
             >
               <X className="w-6 h-6" />
-            </button>
-          </div>
-          <div className="bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-lg p-3">
-            <div className="flex items-center gap-2 mb-1">
-              <div className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse"></div>
-              <span className="text-[#D4AF37] text-sm font-medium">Admin Panel</span>
-            </div>
-            <p className="text-xs text-gray-400">Administrator Access</p>
-          </div>
+            </button>          
         </div>
 
         {/* Navigation */}
@@ -159,27 +151,18 @@ export function AdminLayout() {
         <header className="sticky top-0 z-30 bg-[#0A0A0A] border-b border-[#D4AF37]/20">
           <div className="px-6 py-4 flex items-center justify-between gap-4">
             {/* Mobile Menu Button */}
-            <button
+            <Button
               onClick={() => setIsSidebarOpen(true)}
               className="lg:hidden text-gray-400 hover:text-white"
             >
               <Menu className="w-6 h-6" />
-            </button>
+            </Button>
 
             {/* Mobile Logo */}
             <div className="lg:hidden">
               <Logo />
             </div>
 
-            {/* Search Bar (Desktop) */}
-            <div className="hidden md:flex flex-1 max-w-md relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
-              <input
-                type="text"
-                placeholder="Quick search..."
-                className="w-full bg-[#1A1A1A] border border-[#D4AF37]/20 rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#D4AF37] transition-colors"
-              />
-            </div>
 
             {/* Spacer for layout */}
             <div className="hidden lg:block flex-1"></div>
