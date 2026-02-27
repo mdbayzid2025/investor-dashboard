@@ -52,6 +52,32 @@ function AppRoutes() {
       // Auth Routes
     { path: "/login", element: <LoginPage /> },
 
+
+    // Admin Routes
+    {
+      path: "/admin",
+      element: <AdminLayout />,
+      children: [
+        { index: true, element: <AdminDashboard /> },
+        { path: "users", element: <AdminUsers /> },
+        { path: "admins", element: <AdminManagement /> },
+        { path: "transactions", element: <AdminTransactions /> },
+        { path: "requests", element: <AdminRequests /> },
+        { path: "requests/:id", element: <AdminRequestDetails /> },
+        { path: "requests/:requestId/chat/:chatId", element: <AdminIndividualChat /> },
+        { path: "settings", element: <AdminSettings /> },
+        { path: "stock", element: <AdminStock /> },
+        { path: "stock/:id", element: <AdminStockDetails /> },
+        { path: "notifications", element: <AdminNotifications /> },
+        { path: "billing", element: <AdminBilling /> },
+        { path: "investor-brief", element: <AdminInvestorBrief /> },
+        { path: "cms", element: <AdminCMS /> },
+        { path: "approvals", element: <AdminApprovals /> },
+        { path: "approvals/requests/:id", element: <AdminRequestDetails /> },
+        { path: "approvals/stock/:id", element: <AdminStockDetails /> }
+      ]
+    },
+
     // Catch all
     { path: "*", element: <Navigate to="/" replace /> }
   ]);

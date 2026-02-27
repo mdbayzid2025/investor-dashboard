@@ -128,13 +128,13 @@ export function AdminLayout() {
 
         {/* Footer Actions */}
         <div className="p-4 border-t border-[#D4AF37]/20 space-y-2">
-          <Link
+          {/* <Link
             to="/"
             className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-[#1A1A1A] transition-all"
           >
             <Home className="w-5 h-5" />
             <span className="font-medium">View Website</span>
-          </Link>
+          </Link> */}
           <button
             onClick={handleLogout}
             className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-red-400 hover:bg-red-400/10 transition-all"
